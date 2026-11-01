@@ -8,16 +8,14 @@
 <meta name="theme-color" content="#FDE3EB">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='86' fill='%23F195BC'%3E%EA%95%A4%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Yi&family=Noto+Sans+Thai&family=Noto+Sans+Arabic&family=Noto+Sans+Symbols+2&family=Noto+Sans+JP&family=Noto+Sans+Math&family=Noto+Sans+Chakma&family=Noto+Sans+Gurmukhi&display=swap&text=%EA%92%B7%EA%92%A6%EF%B8%B6%E0%B9%8B%E0%A3%AD%E2%AD%91%F0%9D%9C%97%F0%9D%9C%9A%F0%91%84%9D%E0%A9%AD" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#FDE3EB;--pink:#F2B0CD;--rose:#F195BC;--blue:#D2ECFB;--cream:#FEEFF3;
   --ink:#80566b;--muted:#ad8094;--title:#925d78;--accent:#e99fbe;--accent-2:#db8eb0;
   --card:#fffafd;--surface:#ffffff;--soft:#fdf0f5;--soft-2:#fff4f8;--sky:#f1f9fd;--sky-line:#d9edf8;--sky-ink:#718ea0;
   --line:#f5d3e1;--line-2:#f8e8ef;--glass:#fff9fcbb;
-  --shadow:0 12px 35px #d98eae22;--font:'Nunito',sans-serif;--floaty:var(--rose);
-  --deco-font:'Noto Sans Yi','Noto Sans Thai','Noto Sans Arabic','Noto Sans Symbols 2','Noto Sans JP','Noto Sans Math','Noto Sans Chakma','Noto Sans Gurmukhi'
+  --shadow:0 12px 35px #d98eae22;--font:'Nunito',sans-serif;--floaty:var(--rose)
 }
 body.dark{
   --bg:#2b222e;--cream:#3a2d38;--card:#43353f;--surface:#4a3b46;--soft:#54424f;--soft-2:#4d3d49;--sky:#3c4250;--sky-line:#4f5868;--sky-ink:#c2d6e4;
@@ -34,19 +32,17 @@ button{cursor:pointer;border:0;background:none}
 /* ꕤ floating background */
 #floaters{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
 .floater{position:absolute;bottom:-8vh;left:var(--x);will-change:transform,opacity;animation:rise var(--rise) linear infinite;animation-delay:var(--delay);opacity:0}
-.floater span{display:block;font-family:'Nunito',var(--deco-font),sans-serif;white-space:nowrap;font-weight:300;font-size:var(--size);color:var(--floaty);line-height:1;animation:sway var(--sway) ease-in-out infinite alternate;animation-delay:var(--delay);filter:blur(var(--blur))}
+.floater span{display:block;font-family:'Nunito',sans-serif;font-weight:300;font-size:var(--size);color:var(--floaty);line-height:1;animation:sway var(--sway) ease-in-out infinite alternate;animation-delay:var(--delay);filter:blur(var(--blur))}
 @keyframes rise{0%{transform:translate3d(0,0,0);opacity:0}12%{opacity:var(--o)}88%{opacity:var(--o)}100%{transform:translate3d(0,-120vh,0);opacity:0}}
-.floater.cloud span{filter:saturate(.35) blur(var(--blur))}
 @keyframes sway{from{transform:translateX(calc(var(--drift) * -1)) rotate(-14deg)}to{transform:translateX(var(--drift)) rotate(16deg)}}
 @media (prefers-reduced-motion:reduce){.floater,.floater span{animation-duration:0s!important;animation-iteration-count:1!important}.floater{display:none}}
 
 .app{position:relative;z-index:1;display:grid;grid-template-columns:250px 1fr;min-height:100vh}
 .sidebar{padding:28px 18px;background:var(--glass);border-right:1px solid var(--line);position:sticky;top:0;height:100vh;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:flex;flex-direction:column}
-.brand{font-family:'Great Vibes','Cormorant Garamond',serif;font-size:40px;font-weight:400;line-height:1.1;text-align:center;margin:10px 0 5px;color:#bd7597}
+.brand{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;line-height:1.05;text-align:center;margin:10px 0 5px;color:#bd7597}
 body.dark .brand{color:var(--title)}
 .brand small{display:block;font:600 10px var(--font);letter-spacing:3px;text-transform:uppercase;margin-top:10px;color:var(--muted)}
-.ornament{display:block;font:400 clamp(11px,1.1vw,14px)/1.4 var(--deco-font),sans-serif;color:#d58fae;letter-spacing:1px;white-space:nowrap;margin:2px auto 0;max-width:100%;overflow:hidden}
-body.dark .ornament{color:var(--pink)}
+.flower{text-align:center;font-size:23px;color:var(--rose);margin:14px;letter-spacing:4px}
 .nav{display:grid;gap:8px;margin-top:26px}
 .nav button{padding:12px 14px;border-radius:15px;text-align:left;font-weight:700;color:var(--muted);transition:.2s}
 .nav button:hover,.nav button.active{background:linear-gradient(100deg,#f6c9dc,#fce8f0);color:#86516d;box-shadow:0 5px 16px #df9dbb2b}
@@ -121,63 +117,11 @@ body.dark .ornament{color:var(--pink)}
 .iframe{width:100%;height:360px;border:1px solid var(--line);border-radius:14px;background:#fff}
 a{color:var(--title)}
 .bigvalue{font-size:34px;font-weight:800;color:var(--title)}
-
-/* ♫ my little playlist */
-.mp-panel{grid-column:1/-1}
-.mp-tabs{display:flex;gap:6px;flex-wrap:wrap;background:var(--soft);padding:5px;border-radius:16px;margin-top:10px}
-.mp-tabs button{flex:1 1 140px;min-height:40px;border-radius:12px;font-size:12px;font-weight:800;color:var(--muted);transition:.2s}
-.mp-tabs button.on{background:var(--surface);color:var(--title);box-shadow:0 3px 10px #df9dbb2b}
-.mp-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
-.mp-hint{margin-top:10px}
-.mp-msg{font-size:12px;line-height:1.5;border-radius:12px;margin-top:8px}
-.mp-msg:empty{display:none}
-.mp-msg.ok,.mp-msg.err,.mp-msg.warn{padding:9px 12px}
-.mp-msg.ok{background:#e8f6ef;color:#56856d}.mp-msg.err{background:#fde0ea;color:#b4517c}.mp-msg.warn{background:#fff0d9;color:#9c7042}
-.mp-lib{list-style:none;margin:16px 0 0;padding:6px;display:grid;gap:6px;background:linear-gradient(160deg,var(--soft-2),var(--sky));border:1px solid var(--line);border-radius:18px}
-.mp-item{display:flex;align-items:center;gap:10px;padding:8px 10px;background:var(--surface);border:1px solid var(--line-2);border-radius:14px;transition:.2s}
-.mp-item.on{border-color:var(--pink);box-shadow:0 4px 14px #df9dbb26}
-.mp-info{flex:1;min-width:0;display:grid}
-.mp-info b,.mp-info .small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px}
-.mp-info .small{font-size:11px}
-.mp-src{font-weight:800}.mp-src.sp{color:#4f9a6e}.mp-src.yt{color:#c0577a}.mp-src.url{color:var(--sky-ink)}
-.mp-fav{font-size:18px;color:var(--rose);min-width:36px;min-height:36px;border-radius:50%}
-.mp-acts{display:flex;gap:4px;flex-shrink:0}
-.mp-acts button,.mp-ic{min-width:36px;min-height:36px;border-radius:50%;color:var(--muted);font-size:13px;transition:.2s}
-.mp-acts button:hover:not(:disabled),.mp-ic:hover:not(:disabled){background:var(--soft);color:var(--title)}
-.mp-acts button:disabled,.mp-ic:disabled{opacity:.35;cursor:default}
-.mp-acts .mp-play{background:var(--accent);color:#fff}
-.mp-acts .mp-play:hover{background:var(--accent-2)!important;color:#fff!important}
-.mp-acts .del:hover{background:#fde2e2!important;color:#b05656!important}
-.mp-dock{position:fixed;right:18px;bottom:18px;width:min(370px,calc(100vw - 36px));z-index:15;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:12px;box-shadow:0 14px 40px #d98eae40;animation:fadein .35s ease}
-.mp-embed:empty{display:none}
-.mp-embed{border-radius:14px;overflow:hidden;margin-bottom:8px;background:var(--soft)}
-.mp-embed iframe{display:block;width:100%;border:0}
-.mp-embed.yt{aspect-ratio:16/9}.mp-embed.yt iframe{height:100%}
-.mp-dock.compact .mp-embed.yt{aspect-ratio:auto;height:120px}
-.mp-embed.sp iframe{height:152px}
-.mp-dock.compact .mp-embed.sp iframe{height:80px}
-.mp-now{display:flex;align-items:center;gap:9px}
-.mp-disc{width:36px;height:36px;flex-shrink:0;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--pink),var(--blue));color:#fff;font-size:15px}
-.mp-dock.playing .mp-disc{animation:spin 6s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.mp-prog,.mp-foot,.mp-vol{display:flex;align-items:center;gap:8px}
-.mp-prog{font-size:10px;color:var(--muted);margin-top:6px;font-variant-numeric:tabular-nums}
-.mp-prog input,.mp-vol input{flex:1;accent-color:var(--rose);min-width:0;height:24px}
-.mp-ctrl{display:flex;justify-content:center;gap:6px;margin:2px 0}
-.mp-ic.on{color:var(--rose);background:var(--soft)}
-.mp-ic.mp-main{min-width:46px;min-height:46px;background:var(--accent);color:#fff;font-size:16px;box-shadow:0 5px 13px #df9dbb44}
-.mp-ic.mp-main:hover{background:var(--accent-2)!important;color:#fff!important}
-.mp-foot{justify-content:space-between}.mp-vol{flex:1;max-width:190px}
-.mp-dock .mp-msg{margin-top:6px}
-body{--dock-h:0px}
-.main{padding-bottom:calc(var(--dock-h) + 36px)}
-.toast{bottom:calc(var(--dock-h) + 30px)}
-@media (prefers-reduced-motion:reduce){.mp-dock.playing .mp-disc{animation:none}}
 @media(max-width:900px){
   .app{grid-template-columns:1fr}
   .sidebar{height:auto;position:sticky;top:0;z-index:5;padding:12px 14px}
-  .brand{font-size:32px;margin:2px 0}.brand small{margin-top:4px}.ornament{font-size:11px;margin-top:0}
-  .sidefoot{display:none}
+  .brand{font-size:25px;margin:2px 0}.brand small{margin-top:4px}
+  .flower,.sidefoot{display:none}
   .nav{display:flex;overflow:auto;margin:10px 0 0;scrollbar-width:none}
   .nav button{white-space:nowrap;padding:9px 12px}
   .nav .count{float:none;margin-left:6px}
@@ -190,9 +134,6 @@ body{--dock-h:0px}
   .stats{gap:9px}.stat{padding:13px;min-height:100px}.stat .value{font-size:19px}
   .top{flex-direction:column;align-items:flex-start}.heading{font-size:27px}
   .toast{left:20px;right:20px}
-  .mp-dock{left:8px;right:8px;bottom:8px;width:auto;padding:10px;border-radius:18px}
-  .mp-fields{grid-template-columns:1fr}
-  .mp-item{flex-wrap:wrap}.mp-info{flex-basis:calc(100% - 50px)}.mp-acts{width:100%;justify-content:flex-end}
 }
 </style>
 </head>
@@ -200,7 +141,8 @@ body{--dock-h:0px}
 <div id="floaters" aria-hidden="true"></div>
 <div class="app">
   <aside class="sidebar">
-    <div class="brand">Primpaii's Way<span class="ornament" aria-hidden="true">꒷꒦︶꒷꒦︶ ๋ ࣭ ⭑꒷꒦</span><small>little things, lovely records</small></div>
+    <div class="brand">Primpaii's Way<small>little things, lovely records</small></div>
+    <div class="flower" aria-hidden="true">ꕤ ♡ ✿</div>
     <nav class="nav" id="nav" aria-label="Menu utama">
       <button class="active" data-page="dashboard">✿ Dashboard</button>
       <button data-page="rekapan">ꕤ Rekapan</button>
@@ -222,14 +164,6 @@ body{--dock-h:0px}
     <div id="content"></div>
   </main>
 </div>
-<div class="mp-dock hidden" id="mpDock" role="region" aria-label="My Little Playlist">
-  <div class="mp-embed" id="mpEmbed"></div>
-  <div class="mp-now"><span class="mp-disc" aria-hidden="true">♫</span><div class="mp-info"><b id="mpNowT"></b><span class="small" id="mpNowA"></span></div><button class="mp-ic" id="mpCompact" title="Compact / besar" aria-label="Ubah ukuran pemutar">▭</button><button class="mp-ic" id="mpClose" title="Tutup pemutar" aria-label="Tutup pemutar">✕</button></div>
-  <div class="mp-prog"><span id="mpTime">0:00</span><input type="range" id="mpSeek" min="0" max="1" value="0" aria-label="Progress lagu"><span id="mpDur">--:--</span></div>
-  <div class="mp-ctrl"><button class="mp-ic" id="mpShuffle" title="Shuffle" aria-label="Shuffle">⤮</button><button class="mp-ic" id="mpPrev" aria-label="Previous">⏮</button><button class="mp-ic mp-main" id="mpToggle" aria-label="Play">▶</button><button class="mp-ic" id="mpNext" aria-label="Next">⏭</button><button class="mp-ic" id="mpRepeat" aria-label="Repeat">↻</button></div>
-  <div class="mp-foot"><span class="mp-vol" id="mpVolBox"><button class="mp-ic" id="mpMute" aria-label="Mute / unmute">🔊</button><input type="range" id="mpVol" min="0" max="100" aria-label="Volume"></span><a id="mpOpen" class="small" target="_blank" rel="noopener">Buka ↗</a></div>
-  <div class="mp-msg" role="status"></div>
-</div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
@@ -242,10 +176,11 @@ const readJSON=(k,f)=>{try{return JSON.parse(localStorage.getItem(k))??f}catch(e
 
 let orders=readJSON('pw_orders',[]);
 let settings=readJSON('pw_settings',{});
-let page='dashboard',editId=null,filter={q:'',month:''};
+let page='dashboard',editId=null,audioCtx=null,audioNodes=[],filter={q:'',month:''};
 const PAGES={dashboard:['Dashboard','Semua ringkasan order dalam satu tempat.'],rekapan:['Rekapan','Detail pemasukan, pengeluaran, dan profit order.'],reminder:['Reminder','Pantau masa aktif dan jadwal renewal customer.'],riwayat:['Riwayat Order','Jejak order dan aplikasi favorit customer.'],setting:['Setting','Atur suasana, tampilan, dan koneksi spreadsheet.']};
-const defaults={font:'Nunito',theme:'light',bg:'#FDE3EB',floaty:'soft',symbol:{dashboard:'✿',rekapan:'ꕤ',reminder:'♡',riwayat:'✧',setting:'⚙'},sheetUrl:'https://docs.google.com/spreadsheets/d/1F95-UMgaSWF8zIapli2j40NehaGPvCszQvnxsuxSmcM/edit?usp=sharing',scriptUrl:''};
+const defaults={font:'Nunito',theme:'light',bg:'#FDE3EB',floaty:'soft',symbol:{dashboard:'✿',rekapan:'ꕤ',reminder:'♡',riwayat:'✧',setting:'⚙'},music:'none',sheetUrl:'https://docs.google.com/spreadsheets/d/1F95-UMgaSWF8zIapli2j40NehaGPvCszQvnxsuxSmcM/edit?usp=sharing',scriptUrl:''};
 const S={...defaults,...settings,symbol:{...defaults.symbol,...(settings.symbol||{})}};
+S.music='none'; // browsers block autoplay, so audio always starts off
 
 function save(){localStorage.setItem('pw_orders',JSON.stringify(orders));localStorage.setItem('pw_settings',JSON.stringify(S))}
 let toastTimer;function toast(t){let el=$('#toast');el.textContent=t;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2600)}
@@ -355,13 +290,7 @@ function setting(){
   <div class="field"><label for="theme">Mode tampilan</label><select id="theme"><option value="light" ${S.theme==='light'?'selected':''}>Terang</option><option value="dark" ${S.theme==='dark'?'selected':''}>Gelap</option></select></div>
   <div class="field" style="margin-top:12px"><label for="font">Font website (5 pilihan)</label><select id="font">${['Nunito','Quicksand','DM Sans','Playfair Display','Cormorant Garamond'].map(f=>`<option ${S.font===f?'selected':''}>${f}</option>`).join('')}</select></div>
   <div class="field" style="margin-top:12px"><label for="floaty">Animasi background ꕤ</label><select id="floaty">${[['off','Mati'],['soft','Lembut (default)'],['more','Lebih ramai']].map(([v,n])=>`<option value="${v}" ${S.floaty===v?'selected':''}>${n}</option>`).join('')}</select></div></section>
-  <section class="panel mp-panel"><div class="section-title"><h3>♫ My Little Playlist</h3><span class="pill" id="mpCount"></span></div><p class="small">☁️ Kumpulkan lagu dari Spotify, YouTube, atau link audio sendiri ♡ Musik hanya diputar setelah kamu menekan ▶ dan tetap berjalan saat pindah menu.</p>
-  <div class="mp-tabs" role="tablist">${Object.entries(SRC).map(([k,[n]])=>`<button role="tab" data-tab="${k}" aria-selected="${mp.tab===k}" class="${mp.tab===k?'on':''}">${SRC_ICON[k]} ${k==='url'?'Add Music by URL':'Connect '+n}</button>`).join('')}</div>
-  <div class="field" style="margin-top:12px"><label for="mpUrl" id="mpUrlLabel"></label><input id="mpUrl" inputmode="url" autocomplete="off"></div>
-  <div class="mp-fields"><div class="field"><label for="mpTitle">Nama lagu</label><input id="mpTitle"></div><div class="field"><label for="mpArtist">Nama penyanyi</label><input id="mpArtist" placeholder="opsional"></div></div>
-  <div class="actions"><button class="primary" id="mpAdd">Add to Playlist ♡</button><button class="softbtn" id="mpPlayAll">▶ Putar playlist</button></div>
-  <div class="small mp-hint" id="mpHint"></div><div class="mp-msg" role="status"></div>
-  <ul class="mp-lib" id="mpLib"></ul></section>
+  <section class="panel"><div class="section-title"><h3>♫ Background music</h3></div><p class="small">Enam ambient soundscape original yang dibuat langsung di browser (tanpa file lagu eksternal).</p>${[['none','Off / hening'],['rain','Soft Rain'],['dream','Dreamy Keys'],['pink','Pink Clouds'],['cafe','Quiet Café'],['moon','Moonlight'],['garden','Secret Garden']].map(([v,n])=>`<div class="row"><span>${n}</span><button class="softbtn" onclick="playMusic('${v}')">${S.music===v?'♪ Diputar':'Pilih'}</button></div>`).join('')}<p class="small">Audio dimulai setelah tombol ditekan dan berhenti saat halaman ditutup.</p></section>
   <section class="panel"><div class="section-title"><h3>୨୧ Pilih simbol toolbar</h3></div>${Object.keys(PAGES).map(k=>`<div style="margin:12px 0"><b style="font-size:12px">${PAGES[k][0]}</b><div class="symbol-choice" style="margin-top:7px">${symbols.map(s=>`<button class="${S.symbol[k]===s?'chosen':''}" onclick="setSymbol('${k}','${s}')">${s}</button>`).join('')}</div></div>`).join('')}</section>
   <section class="panel"><div class="section-title"><h3>▤ Google Sheets</h3></div><div class="notice">Agar data bisa sinkron, tambahkan Apps Script dari file panduan, deploy sebagai Web App, lalu tempel URL-nya di sini. “Kirim ke Sheets” mengganti isi tab Orders dengan data di browser ini.</div><div class="field" style="margin-top:12px"><label for="scriptUrl">URL Google Apps Script Web App</label><input id="scriptUrl" placeholder="https://script.google.com/macros/s/.../exec" value="${esc(S.scriptUrl)}"></div><div class="actions"><button class="primary" id="saveScript">Simpan koneksi</button><button class="softbtn" id="syncNow">Kirim ke Sheets</button><button class="softbtn" id="pullNow">Ambil dari Sheets</button></div><div class="section-title"><h3>Spreadsheet preview</h3><a class="small" target="_blank" rel="noopener" href="${esc(S.sheetUrl)}">Buka spreadsheet ↗</a></div>${sheetId?`<iframe class="iframe" loading="lazy" title="Preview spreadsheet" src="https://docs.google.com/spreadsheets/d/${esc(sheetId)}/preview"></iframe>`:''}</section></div>
   <div class="panel" style="margin-top:15px"><div class="section-title"><h3>♡ Data &amp; backup</h3><span class="pill">${orders.length} order tersimpan</span></div><p class="small">Data order tersimpan di browser perangkat ini. Download backup secara berkala agar aman, dan jangan gunakan mode incognito untuk data utama.</p><div class="actions"><button class="softbtn" id="backup">Download backup JSON</button><button class="softbtn" id="restore">Pulihkan backup JSON</button><input id="backupFile" type="file" accept=".json" class="hidden"></div></div></div>`;
@@ -369,7 +298,6 @@ function setting(){
   $('#font').onchange=e=>{S.font=e.target.value;save();render()};
   $('#floaty').onchange=e=>{S.floaty=e.target.value;save();buildFloaters();toast(S.floaty==='off'?'Animasi dimatikan':'ꕤ melayang pelan…')};
   $('#saveScript').onclick=()=>{S.scriptUrl=$('#scriptUrl').value.trim();save();toast('URL koneksi disimpan ♡')};
-  mpSettings();
   $('#syncNow').onclick=syncSheets;$('#pullNow').onclick=pullSheets;$('#backup').onclick=backup;$('#restore').onclick=()=>$('#backupFile').click();$('#backupFile').onchange=e=>restore(e.target.files[0]);
 }
 function setBg(c){S.bg=c;if(S.theme==='dark')S.theme='light';save();render();toast('Nuansa warna diperbarui ♡')}
@@ -383,176 +311,40 @@ function parseCSVLine(l){let a=[],s='',q=false;for(let i=0;i<l.length;i++){let c
 function importCSV(file){if(!file)return;let r=new FileReader();r.onload=()=>{let lines=String(r.result).replace(/^﻿/,'').split(/\r?\n/).filter(l=>l.trim());if(!lines.length){toast('File CSV kosong');return}let heads=parseCSVLine(lines.shift()).map(h=>h.trim());let incoming=lines.map(l=>{let a=parseCSVLine(l),o={};heads.forEach((h,i)=>o[h]=(a[i]??'').trim());o.id=uid();['duration','income','expense','discount'].forEach(k=>o[k]=Number(o[k])||0);o.status=o.status||'aktif';return o}).filter(o=>o.date&&o.customer);orders.push(...incoming);save();render();toast(`${incoming.length} order berhasil diimpor ✿`)};r.readAsText(file)}
 function download(data,name,type){let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data],{type}));a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
 function backup(){download(JSON.stringify({orders,settings:S},null,2),`primpaiis-way-backup-${todayISO()}.json`,'application/json')}
-function restore(file){if(!file)return;let r=new FileReader();r.onload=()=>{try{let d=JSON.parse(r.result);if(!Array.isArray(d.orders))throw 0;if(!confirm(`Pulihkan ${d.orders.length} order? Data di browser ini akan diganti.`))return;orders=d.orders;Object.assign(S,d.settings||{});save();buildFloaters();render();toast('Backup berhasil dipulihkan ♡')}catch(e){toast('File backup tidak valid')}};r.readAsText(file)}
+function restore(file){if(!file)return;let r=new FileReader();r.onload=()=>{try{let d=JSON.parse(r.result);if(!Array.isArray(d.orders))throw 0;if(!confirm(`Pulihkan ${d.orders.length} order? Data di browser ini akan diganti.`))return;orders=d.orders;Object.assign(S,d.settings||{},{music:'none'});save();buildFloaters();render();toast('Backup berhasil dipulihkan ♡')}catch(e){toast('File backup tidak valid')}};r.readAsText(file)}
 async function syncSheets(){if(!S.scriptUrl){toast('Isi URL Apps Script terlebih dahulu');return}if(!confirm(`Kirim ${orders.length} order ke Sheets? Isi tab Orders akan diganti.`))return;try{let r=await fetch(S.scriptUrl,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action:'replace',orders})});let d=await r.json();toast(d.ok?`Berhasil sync ${d.count??orders.length} order ✿`:'Sync gagal')}catch(e){toast('Sync belum berhasil. Periksa URL dan deployment Apps Script.')}}
 async function pullSheets(){if(!S.scriptUrl){toast('Isi URL Apps Script terlebih dahulu');return}try{let r=await fetch(S.scriptUrl);let d=await r.json();if(!d.ok)throw new Error('Sheet response');let incoming=(d.orders||[]).map(o=>({...o,id:o.id||uid(),date:String(o.date||'').slice(0,10),duration:Number(o.duration)||0,income:Number(o.income)||0,expense:Number(o.expense)||0,discount:Number(o.discount)||0,status:o.status||'aktif'}));if(!confirm(`Ambil ${incoming.length} baris dari Sheets dan mengganti data lokal di browser ini?`))return;orders=incoming;save();render();toast('Data dari Sheets berhasil dimuat ♡')}catch(e){toast('Gagal membaca Sheets. Periksa akses deployment Apps Script.')}}
 
-/* ---------- ♫ my little playlist ---------- */
-const SRC={spotify:['Spotify','sp'],youtube:['YouTube','yt'],url:['Custom URL','url']};
-const SRC_ICON={spotify:'♫',youtube:'▶',url:'☁️'};
-const SP_KIND={track:'track',album:'album',playlist:'playlist',episode:'podcast',show:'podcast',artist:'artist'};
-const YT_ERR={2:'Link video YouTube tidak valid.',5:'Video tidak bisa diputar di browser ini.',100:'Video tidak tersedia (dihapus atau privat).',101:'Pemilik video tidak mengizinkan video ini di-embed — buka langsung di YouTube ↗',150:'Pemilik video tidak mengizinkan video ini di-embed — buka langsung di YouTube ↗'};
-const PL=Object.assign({tracks:[],cur:null,shuffle:false,repeat:'off',volume:70,muted:false,compact:true},readJSON('pw_playlist',{}));
-if(!Array.isArray(PL.tracks))PL.tracks=[];
-let mp={tab:'spotify',loaded:null,playing:false,audio:null,yt:null,sp:null,timer:null,pos:0,dur:0,seeking:false};
-function savePL(){localStorage.setItem('pw_playlist',JSON.stringify(PL))}
-const curTrack=()=>PL.tracks.find(t=>t.id===PL.cur);
-
-function parseSpotify(u){u=String(u).trim();let m=u.match(/^spotify:(track|album|playlist|episode|show|artist):([A-Za-z0-9]{22})$/)||u.match(/^https?:\/\/open\.spotify\.com\/(?:intl-[\w-]+\/)?(?:embed\/)?(track|album|playlist|episode|show|artist)\/([A-Za-z0-9]{22})/);return m?{kind:m[1],uri:`spotify:${m[1]}:${m[2]}`,open:`https://open.spotify.com/${m[1]}/${m[2]}`}:null}
-function parseYouTube(u){let url;try{url=new URL(String(u).trim())}catch(e){return null}
-  let h=url.hostname.replace(/^(www|m|music)\./,'');if(!['youtube.com','youtu.be','youtube-nocookie.com'].includes(h))return null;
-  let v=h==='youtu.be'?url.pathname.slice(1).split('/')[0]:(url.searchParams.get('v')||(url.pathname.match(/^\/(?:embed|shorts|live)\/([\w-]{11})/)||[])[1]),list=url.searchParams.get('list');
-  if(!/^[\w-]{11}$/.test(v||''))v=null;if(!/^[\w-]+$/.test(list||''))list=null;if(!v&&!list)return null;
-  return{v,list,open:v?`https://www.youtube.com/watch?v=${v}${list?'&list='+list:''}`:`https://www.youtube.com/playlist?list=${list}`}}
-function parseAudio(u){let url;try{url=new URL(String(u).trim())}catch(e){return null}if(!/^https?:$/.test(url.protocol))return null;if(/(^|\.)(spotify\.com|spotify\.link|youtube\.com|youtu\.be)$/.test(url.hostname))return'platform';return{open:url.href,known:/\.(mp3|wav|ogg|oga|m4a|aac|opus|flac|weba)$/i.test(url.pathname)}}
-const parseTrack=t=>t.src==='spotify'?parseSpotify(t.url):t.src==='youtube'?parseYouTube(t.url):parseAudio(t.url);
-
-function mpMsg(text,type=''){$$('.mp-msg').forEach(el=>{el.textContent=text;el.className='mp-msg '+type})}
-function loadScript(src){return new Promise((ok,no)=>{let s=document.createElement('script');s.src=src;s.async=true;s.onload=ok;s.onerror=no;document.head.appendChild(s)})}
-let ytApi=null,spApi=null;
-function ytAPI(){return ytApi??=new Promise((ok,no)=>{if(window.YT?.Player)return ok(YT);window.onYouTubeIframeAPIReady=()=>ok(YT);loadScript('https://www.youtube.com/iframe_api').catch(e=>{ytApi=null;no(e)})})}
-function spAPI(){return spApi??=new Promise((ok,no)=>{window.onSpotifyIframeApiReady=api=>ok(api);loadScript('https://open.spotify.com/embed/iframe-api/v1').catch(e=>{spApi=null;no(e)})})}
-
-/* settings panel: add form + library */
-function mpSettings(){
-  $$('.mp-tabs button').forEach(b=>b.onclick=()=>{mp.tab=b.dataset.tab;$$('.mp-tabs button').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-selected',x===b)});mpTab()});
-  $('#mpAdd').onclick=addTrack;$('#mpUrl').onkeydown=e=>{if(e.key==='Enter')addTrack()};
-  $('#mpPlayAll').onclick=()=>{let t=curTrack()||PL.tracks[0];if(!t){mpMsg('Playlist masih kosong ♡');return}mp.loaded===t.id?mpToggle():mpPlay(t.id)};
-  $('#mpLib').onclick=e=>{let b=e.target.closest('button[data-act]');if(!b)return;let id=b.closest('[data-id]').dataset.id,i=PL.tracks.findIndex(t=>t.id===id),t=PL.tracks[i];if(!t)return;
-    switch(b.dataset.act){
-      case'play':mp.loaded===id?mpToggle():mpPlay(id);return;
-      case'fav':t.fav=!t.fav;break;
-      case'up':case'down':{let j=i+(b.dataset.act==='up'?-1:1);if(j<0||j>=PL.tracks.length)return;[PL.tracks[i],PL.tracks[j]]=[PL.tracks[j],PL.tracks[i]];break}
-      case'edit':{let n=prompt('Nama lagu',t.title);if(n===null)return;let a=prompt('Nama penyanyi (boleh kosong)',t.artist||'');t.title=n.trim()||t.title;if(a!==null)t.artist=a.trim();delete t.auto;break}
-      case'del':if(!confirm(`Hapus “${t.title}” dari playlist?`))return;if(PL.cur===id){mpStop();PL.cur=null;mpHide()}PL.tracks.splice(i,1);toast('Lagu dihapus dari playlist');break}
-    savePL();renderLibrary();mpUI()};
-  mpTab();renderLibrary();
-}
-function mpTab(){
-  let c={spotify:['Link Spotify (lagu, album, playlist, atau podcast)','https://open.spotify.com/track/…','Memakai Spotify Embed resmi — website ini tidak pernah meminta password. Spotify hanya memutar preview ±30 detik kecuali kamu sudah login ke Spotify di browser ini (buka open.spotify.com lalu login). Volume diatur dari pemutar Spotify.'],
-    youtube:['Link YouTube / YouTube Music / playlist','https://www.youtube.com/watch?v=…','Memakai YouTube IFrame Player resmi. Gunakan tombol ▭ di pemutar untuk mode compact atau besar. Beberapa video tidak mengizinkan diputar di luar YouTube.'],
-    url:['Direct audio URL (MP3, WAV, OGG)','https://contoh.com/lagu.mp3','Gunakan link langsung ke file audio yang bisa diakses publik — bukan link halaman Spotify/YouTube.']}[mp.tab];
-  $('#mpUrlLabel').textContent=c[0];$('#mpUrl').placeholder=c[1];$('#mpHint').textContent='✧ '+c[2];$('#mpTitle').placeholder=mp.tab==='url'?'contoh: Pink Clouds':'opsional';mpMsg('');
-}
-function addTrack(){
-  let src=mp.tab,url=$('#mpUrl').value.trim(),title=$('#mpTitle').value.trim(),artist=$('#mpArtist').value.trim();
-  if(!url){mpMsg('Tempel link musiknya dulu ya ♡','err');return}
-  let p=parseTrack({src,url});
-  if(p==='platform'){mpMsg('Ini link Spotify/YouTube, bukan file audio langsung — gunakan tab Connect Spotify atau Connect YouTube.','err');return}
-  if(!p){mpMsg({spotify:'Link Spotify tidak valid. Salin dari Spotify: Bagikan → Salin link (open.spotify.com/…).',youtube:'Link YouTube tidak valid. Gunakan link video, YouTube Music, atau playlist.',url:'URL audio tidak valid. Gunakan link http(s) langsung ke file MP3, WAV, atau OGG.'}[src],'err');return}
-  let t={id:uid(),src,url:src==='url'?p.open:url,title,artist,fav:false};
-  if(!title){t.auto=true;t.title=src==='spotify'?`Spotify ${SP_KIND[p.kind]}`:src==='youtube'?(p.v?'YouTube video':'YouTube playlist'):(decodeURIComponent(new URL(p.open).pathname.split('/').pop()).replace(/\.\w+$/,'')||'Lagu tanpa judul')}
-  PL.tracks.push(t);savePL();$('#mpUrl').value=$('#mpTitle').value=$('#mpArtist').value='';renderLibrary();
-  mpMsg(src==='url'&&!p.known?'Ditambahkan ✧ — link ini tidak berakhiran .mp3/.wav/.ogg, jadi mungkin tidak bisa diputar.':'Ditambahkan ke playlist ✧',src==='url'&&!p.known?'warn':'ok');
-  if(src==='spotify'&&t.auto)fetch('https://open.spotify.com/oembed?url='+encodeURIComponent(p.open)).then(r=>r.ok?r.json():null).then(d=>{if(d?.title&&t.auto){t.title=d.title;delete t.auto;savePL();renderLibrary();mpUI()}}).catch(()=>{});
-}
-function renderLibrary(){
-  let el=$('#mpLib');if(!el)return;let n=PL.tracks.length;$('#mpCount').textContent=`${n} lagu`;
-  el.innerHTML=PL.tracks.map((t,i)=>{let on=t.id===PL.cur,pl=on&&mp.playing&&mp.loaded===t.id,s=SRC[t.src]||SRC.url;return `<li class="mp-item${on?' on':''}" data-id="${esc(t.id)}">
-  <button class="mp-fav${t.fav?' on':''}" data-act="fav" aria-pressed="${!!t.fav}" aria-label="Tandai favorit">${t.fav?'♥':'♡'}</button>
-  <div class="mp-info"><b>${esc(t.title)}</b><span class="small">${t.artist?esc(t.artist)+' · ':''}<span class="mp-src ${s[1]}">${s[0]}</span>${pl?' · ♪ diputar':''}</span></div>
-  <div class="mp-acts"><button data-act="up" aria-label="Naikkan" ${i?'':'disabled'}>↑</button><button data-act="down" aria-label="Turunkan" ${i<n-1?'':'disabled'}>↓</button><button data-act="edit" aria-label="Ganti nama">✎</button><button class="mp-play" data-act="play" aria-label="${pl?'Pause':'Play'}">${pl?'❚❚':'▶'}</button><button class="del" data-act="del" aria-label="Hapus">✕</button></div></li>`}).join('')||'<li class="empty">☁️ Playlist masih kosong — tambahkan lagu pertamamu ✧</li>';
-}
-
-/* engines — only one source is alive at a time */
-function mpStop(){
-  clearInterval(mp.timer);
-  if(mp.audio){let a=mp.audio;a.onplay=a.onpause=a.ontimeupdate=a.onended=a.onerror=null;a.pause();a.removeAttribute('src');a.load()}
-  if(mp.yt){try{mp.yt.destroy()}catch(e){}}
-  if(mp.sp){try{mp.sp.destroy()}catch(e){}}
-  Object.assign(mp,{audio:null,yt:null,sp:null,loaded:null,playing:false,pos:0,dur:0});$('#mpEmbed').innerHTML='';$('#mpEmbed').className='mp-embed';
-}
-function mpPlay(id){
-  let t=PL.tracks.find(x=>x.id===id);if(!t)return;
-  mpStop();PL.cur=id;savePL();mp.loaded=id;mpMsg('');$('#mpDock').classList.remove('hidden');
-  let p=parseTrack(t);
-  if(!p||p==='platform')mpMsg('Link lagu ini tidak valid — hapus lalu tambahkan ulang ♡','err');
-  else try{({url:playAudio,youtube:playYT,spotify:playSP})[t.src](t,p)}catch(e){mpMsg('Lagu ini tidak dapat diputar.','err')}
-  mpUI();renderLibrary();
-}
-function playAudio(t){
-  let a=new Audio();a.preload='auto';a.volume=PL.volume/100;a.muted=PL.muted;mp.audio=a;
-  a.onplay=()=>{mp.playing=true;mpUI()};a.onpause=()=>{mp.playing=false;mpUI()};a.onended=mpEnded;
-  a.ontimeupdate=()=>{mp.pos=a.currentTime;mp.dur=isFinite(a.duration)?a.duration:0;mpProg()};
-  a.onerror=()=>{mp.playing=false;mpUI();mpMsg('URL audio tidak dapat diputar. Pastikan link mengarah langsung ke file MP3/WAV/OGG yang bisa diakses publik.','err')};
-  a.src=t.url;a.play().catch(e=>{if(e.name==='NotAllowedError')mpMsg('Browser menahan pemutaran — tekan ▶ sekali lagi ♡','warn')});
-}
-function playYT(t,p){
-  let id=t.id;$('#mpEmbed').className='mp-embed yt';
-  ytAPI().then(YT=>{if(mp.loaded!==id)return;let host=document.createElement('div');$('#mpEmbed').appendChild(host);
-    mp.yt=new YT.Player(host,{width:'100%',height:'100%',videoId:p.v||undefined,playerVars:{autoplay:1,playsinline:1,rel:0,...(p.list?{listType:'playlist',list:p.list}:{})},events:{
-      onReady:e=>{let y=e.target;y.setVolume(PL.volume);PL.muted?y.mute():y.unMute();y.playVideo();mp.timer=setInterval(()=>{if(!mp.yt?.getCurrentTime)return;mp.pos=mp.yt.getCurrentTime()||0;mp.dur=mp.yt.getDuration()||0;mpProg()},500)},
-      onStateChange:e=>{let y=e.target;if(e.data===1){mp.playing=true;let d=y.getVideoData?.();if(t.auto&&d?.title){t.title=d.title;if(!t.artist&&d.author)t.artist=d.author;delete t.auto;savePL();renderLibrary()}}else if(e.data===2||e.data===0)mp.playing=false;mpUI();
-        if(e.data===0){let l=y.getPlaylist?.();if(!l||y.getPlaylistIndex()>=l.length-1)mpEnded()}},
-      onError:e=>{mp.playing=false;mpUI();mpMsg(YT_ERR[e.data]||'Video tidak dapat diputar.','err')}}});
-  }).catch(()=>{if(mp.loaded===id)mpMsg('Pemutar YouTube gagal dimuat. Periksa koneksi internet atau ad-blocker.','err')});
-}
-function playSP(t,p){
-  let id=t.id;$('#mpEmbed').className='mp-embed sp';
-  spAPI().then(api=>{if(mp.loaded!==id)return;let host=document.createElement('div');$('#mpEmbed').appendChild(host);
-    api.createController(host,{uri:p.uri,width:'100%',height:152},c=>{if(mp.loaded!==id){c.destroy();return}mp.sp=c;
-      c.addListener('ready',()=>c.play());
-      c.addListener('playback_update',e=>{let d=e.data||{},was=mp.playing;mp.playing=!d.isPaused;mp.pos=(d.position||0)/1000;mp.dur=(d.duration||0)/1000;mpProg();if(was!==mp.playing)mpUI()})});
-  }).catch(()=>{if(mp.loaded===id)mpMsg('Pemutar Spotify gagal dimuat. Periksa koneksi internet atau ad-blocker.','err')});
-}
-
-/* controls */
-function mpToggle(){
-  let t=curTrack()||PL.tracks[0];if(!t)return;if(mp.loaded!==t.id)return mpPlay(t.id);
-  if(mp.audio)mp.playing?mp.audio.pause():mp.audio.play().catch(()=>mpMsg('URL audio tidak dapat diputar.','err'));
-  else if(mp.yt?.playVideo)mp.playing?mp.yt.pauseVideo():mp.yt.playVideo();
-  else if(mp.sp)mp.sp.togglePlay();
-}
-function nextId(dir,auto){
-  let L=PL.tracks,i=L.findIndex(t=>t.id===PL.cur);if(!L.length)return null;
-  if(PL.shuffle&&L.length>1){let j;do{j=Math.floor(Math.random()*L.length)}while(j===i);return L[j].id}
-  let j=i+dir;if(j>=L.length){if(auto&&PL.repeat!=='all')return null;j=0}if(j<0)j=L.length-1;return L[j].id;
-}
-function mpStep(dir){let n=nextId(dir,false);if(n)mpPlay(n)}
-function mpEnded(){if(PL.repeat==='one'){mpSeek(0);mp.audio?mp.audio.play().catch(()=>{}):mp.yt?.playVideo?.();return}let n=nextId(1,true);if(n)mpPlay(n);else{mp.playing=false;mpUI()}}
-function mpSeek(s){if(mp.audio)mp.audio.currentTime=s;else if(mp.yt?.seekTo)mp.yt.seekTo(s,true);else if(mp.sp)mp.sp.seek(s)}
-function mpApplyVol(){if(mp.audio){mp.audio.volume=PL.volume/100;mp.audio.muted=PL.muted}if(mp.yt?.setVolume){mp.yt.setVolume(PL.volume);PL.muted?mp.yt.mute():mp.yt.unMute()}savePL();mpUI()}
-function mpVolume(v){PL.volume=v;PL.muted=!v;mpApplyVol()}
-function mpMute(){PL.muted=!PL.muted;if(!PL.muted&&!PL.volume)PL.volume=50;mpApplyVol()}
-function mpHide(){mpStop();$('#mpDock').classList.add('hidden');document.body.style.removeProperty('--dock-h');renderLibrary()}
-const clock=s=>{s=Math.max(0,Math.floor(s||0));return `${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`};
-function mpProg(){if(mp.seeking)return;let r=$('#mpSeek');r.max=Math.max(1,Math.round(mp.dur));r.value=Math.round(mp.pos);r.disabled=!mp.dur;$('#mpTime').textContent=clock(mp.pos);$('#mpDur').textContent=mp.dur?clock(mp.dur):'--:--'}
-function mpUI(){
-  let t=curTrack(),d=$('#mpDock');if(!t)return;let p=parseTrack(t),canVol=t.src!=='spotify';
-  $('#mpNowT').textContent=t.title;$('#mpNowA').textContent=(t.artist?t.artist+' · ':'')+(SRC[t.src]||SRC.url)[0];
-  $('#mpToggle').textContent=mp.playing?'❚❚':'▶';$('#mpToggle').setAttribute('aria-label',mp.playing?'Pause':'Play');
-  d.classList.toggle('playing',mp.playing);d.classList.toggle('compact',PL.compact);
-  $('#mpShuffle').classList.toggle('on',PL.shuffle);$('#mpShuffle').setAttribute('aria-pressed',PL.shuffle);
-  $('#mpRepeat').classList.toggle('on',PL.repeat!=='off');$('#mpRepeat').textContent=PL.repeat==='one'?'↻¹':'↻';$('#mpRepeat').title='Repeat: '+{off:'mati',all:'semua lagu',one:'satu lagu'}[PL.repeat];
-  $('#mpVol').value=PL.muted?0:PL.volume;$('#mpVol').disabled=!canVol;$('#mpMute').disabled=!canVol;$('#mpMute').textContent=PL.muted||!PL.volume?'🔇':'🔊';
-  $('#mpVolBox').title=canVol?'Volume':'Volume Spotify diatur dari pemutar Spotify';
-  $('#mpCompact').classList.toggle('hidden',t.src==='url');
-  let o=$('#mpOpen');o.href=p&&p!=='platform'?p.open:'#';o.textContent=t.src==='spotify'?'Buka Spotify ↗':t.src==='youtube'?'Buka YouTube ↗':'Buka file ↗';
-  mpProg();
-  if(renderLibrary.lastPlaying!==mp.playing+PL.cur){renderLibrary.lastPlaying=mp.playing+PL.cur;renderLibrary()}
-}
-function mpInit(){
-  $('#mpToggle').onclick=mpToggle;$('#mpPrev').onclick=()=>mpStep(-1);$('#mpNext').onclick=()=>mpStep(1);
-  $('#mpShuffle').onclick=()=>{PL.shuffle=!PL.shuffle;savePL();mpUI()};
-  $('#mpRepeat').onclick=()=>{PL.repeat={off:'all',all:'one',one:'off'}[PL.repeat]||'off';savePL();mpUI();toast('Repeat: '+{off:'mati',all:'semua lagu',one:'satu lagu'}[PL.repeat])};
-  $('#mpCompact').onclick=()=>{PL.compact=!PL.compact;savePL();mpUI()};
-  $('#mpClose').onclick=mpHide;$('#mpMute').onclick=mpMute;$('#mpVol').oninput=e=>mpVolume(+e.target.value);
-  let r=$('#mpSeek');r.oninput=()=>{mp.seeking=true;$('#mpTime').textContent=clock(+r.value)};r.onchange=()=>{mp.seeking=false;mpSeek(+r.value)};
-  if('ResizeObserver' in window)new ResizeObserver(()=>{let d=$('#mpDock');d.classList.contains('hidden')?document.body.style.removeProperty('--dock-h'):document.body.style.setProperty('--dock-h',d.offsetHeight+'px')}).observe($('#mpDock'));
+/* ---------- ambient music ---------- */
+function stopMusic(){audioNodes.forEach(o=>{try{o.stop()}catch(e){}});audioNodes=[];if(audioCtx){audioCtx.close();audioCtx=null}}
+function playMusic(kind){
+  stopMusic();S.music=kind;
+  if(kind==='none'){toast('Musik dimatikan');render();return}
+  try{
+    audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+    let presets={rain:[174,220,261],dream:[261,330,392],pink:[220,277,349],cafe:[196,246,293],moon:[146,196,246],garden:[196,261,329]};
+    let master=audioCtx.createGain();master.gain.setValueAtTime(0,audioCtx.currentTime);master.gain.linearRampToValueAtTime(1,audioCtx.currentTime+2.5);master.connect(audioCtx.destination);
+    (presets[kind]||presets.dream).forEach((f,i)=>{
+      let o=audioCtx.createOscillator(),g=audioCtx.createGain(),lfo=audioCtx.createOscillator(),depth=audioCtx.createGain();
+      o.type=i===0?'sine':'triangle';o.frequency.value=f;g.gain.value=.012/(i+1);
+      lfo.frequency.value=.07+i*.05;depth.gain.value=.008/(i+1);lfo.connect(depth);depth.connect(g.gain);
+      o.connect(g);g.connect(master);o.start();lfo.start();audioNodes.push(o,lfo);
+    });
+    toast('Ambient dimainkan · pilih Off untuk berhenti');render();
+  }catch(e){toast('Audio tidak didukung browser ini')}
 }
 
 /* ---------- ꕤ floating background ---------- */
-const FLOAT_SYMS=['ꕤ','ꕤ','☁️','𝜗𝜚','♡‧','𑄝੭'];
 function buildFloaters(){
   let box=$('#floaters');box.innerHTML='';
   if(S.floaty==='off')return;
   let w=window.innerWidth,count=Math.round(Math.min(28,Math.max(10,w/(S.floaty==='more'?45:80))));
   let rand=(a,b)=>a+Math.random()*(b-a),frag=document.createDocumentFragment();
   for(let i=0;i<count;i++){
-    let sym=FLOAT_SYMS[Math.floor(Math.random()*FLOAT_SYMS.length)],size=rand(11,sym.length>1?24:30)*(sym==='☁️'?1.25:1),rise=rand(38,75),el=document.createElement('div');
-    el.className=sym==='☁️'?'floater cloud':'floater';
+    let size=rand(11,34),rise=rand(38,75),el=document.createElement('div');
+    el.className='floater';
     el.style.cssText=`--x:${(i+Math.random())/count*100}%;--size:${size}px;--rise:${rise}s;--sway:${rand(7,13)}s;--delay:${-rand(0,rise)}s;--drift:${rand(14,38)}px;--o:${rand(.12,size>24?.22:.32).toFixed(2)};--blur:${size>28?.6:0}px`;
-    el.innerHTML=`<span>${sym}</span>`;frag.appendChild(el);
+    el.innerHTML='<span>ꕤ</span>';frag.appendChild(el);
   }
   box.appendChild(frag);
 }
@@ -560,7 +352,6 @@ let resizeTimer,lastW=window.innerWidth;window.addEventListener('resize',()=>{if
 
 $$('#nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
 buildFloaters();
-mpInit();
 render();
 </script>
 </body>
